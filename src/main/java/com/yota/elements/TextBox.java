@@ -1,8 +1,6 @@
 package com.yota.elements;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.testng.AssertJUnit;
 
 public class TextBox extends BaseElement {
 
