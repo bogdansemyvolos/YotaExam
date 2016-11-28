@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Tests" verbose="5" data-provider-thread-count="1">
+	<parameter name="path" value=""/>
+	<test name="PaymentTests">
+		<parameter name="amount" value="653"/>
+		<parameter name="speedForConnect" value="2.1Мбит/сек (макс.)"/>
+		<parameter name="speedButtonDisableTest" value="1.0Мбит/сек (макс.)"/>
+		<parameter name="speedForReset" value="5.0Мбит/сек (макс.)"/>
+		<classes>
+		    <class name="com.yota.tests.PaymentPageTest"/>
+		</classes>
+	</test>
+</suite>
