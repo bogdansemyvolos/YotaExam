@@ -5,10 +5,6 @@ import com.yota.elements.Label;
 import com.yota.elements.TextBox;
 import org.openqa.selenium.By;
 
-/*
- * Sample page
- *
- */
 public class PaymentPage extends BasePage {
 
     /**

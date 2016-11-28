@@ -11,10 +11,6 @@ import org.openqa.selenium.safari.SafariDriver;
 
 import com.opera.core.systems.OperaDriver;
 
-/*
- * Factory to instantiate a WebDriver object. It returns an instance of the driver (local invocation) or an instance of RemoteWebDriver
- *
- */
 public class WebDriverFactory {
 
 	/* Browsers constants */

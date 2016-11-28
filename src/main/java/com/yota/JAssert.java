@@ -1,11 +1,8 @@
 package com.yota;
 
-
-import com.yota.elements.Label;
 import com.yota.util.Logger;
 import junit.framework.Assert;
 import junit.framework.AssertionFailedError;
-import org.openqa.selenium.By;
 
 public class JAssert {
     private Logger logger = Logger.getInstance();
@@ -14,53 +11,6 @@ public class JAssert {
     private final String correctM = "корректный текст: ";
     private static JAssert instance = null;
 
-    /**
-     * @param entityName название сущности, текст внутри которой проверяется. Например: Поле
-     * @param expected ожидаемый текст
-     * @param actual актуальный текст
-     * @param printSuccessResult устанавливается в true, если есть необходимость выводить сообщение о корректном тексте в сущности
-     */
-    public final void assertText(final String entityName, final String expected,  String actual, final Boolean printSuccessResult){
-        if (!expected.equals(actual)) {
-            logger.warn(String.format(messageTemplate, entityName) + incorrectM + actual + " ; Ожидалось: " + expected);
-        } else {
-            if(printSuccessResult){
-                logger.info(String.format(messageTemplate, entityName) + correctM + "'" + expected + "'");
-            }
-        }
-    }
-
-
-    /**
-     * @param entityName название сущности, текст внутри которой проверяется. Например: Поле
-     * @param expected ожидаемый текст
-     * @param actual актуальный текст
-     * @param printSuccessResult устанавливается в true, если есть необходимость выводить сообщение о корректном тексте в сущности
-     */
-    public final void assertTextContains(final String entityName, final String expected,  final String actual, final Boolean printSuccessResult){
-        if (!actual.contains(expected)) {
-            logger.warn(String.format(messageTemplate, entityName) + incorrectM + actual + " ; Ожидалось: " + expected);
-        } else {
-            if(printSuccessResult){
-                logger.info(String.format(messageTemplate, entityName) + correctM + expected);
-            }
-        }
-    }
-
-    /**
-     * @param entityName название сущности, текст внутри которой проверяется. Например: Поле
-     * @param expected ожидаемый текст
-     * @param actual актуальный текст
-     * @param printSuccessResult устанавливается в true, если есть необходимость выводить сообщение о корректном тексте в сущности
-     */
-    public final void assertTextContains(final String entityName, final String[] expected,  final String actual, final Boolean printSuccessResult){
-        for(int i = 0; i < expected.length; i++){
-            assertTextContains(entityName,expected[i],actual,printSuccessResult);
-            if(printSuccessResult){
-                logger.info(String.format(messageTemplate, entityName) + correctM + expected[i]);
-            }
-        }
-    }
 
     /** Проверяет что актуальное значение верное
      * @param errorMessage сообщение если не true

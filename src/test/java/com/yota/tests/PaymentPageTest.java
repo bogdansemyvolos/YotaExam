@@ -10,8 +10,6 @@ public class PaymentPageTest extends TestBase {
 	@Parameters({ "path" })
 	@BeforeClass
 	public void testInit(String path) {
-
-		// Load the page in the browser
 		webDriver.get(websiteUrl + path);
 	}
 

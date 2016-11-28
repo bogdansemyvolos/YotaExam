@@ -16,10 +16,6 @@ import org.testng.annotations.*;
 import com.yota.util.PropertyLoader;
 import com.yota.util.Browser;
 
-/*
- * Base class for all the test classes
- *
- */
 public class TestBase extends BaseEntity {
     private static final String SCREENSHOT_FOLDER = "target/screenshots/";
     private static final String SCREENSHOT_FORMAT = ".png";

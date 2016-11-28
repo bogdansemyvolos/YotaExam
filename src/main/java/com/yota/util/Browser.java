@@ -7,12 +7,6 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import javax.naming.NamingException;
-
-/*
- * Bean representing a browser. It contains name, version and platform fields.
- *
- */
 public class Browser {
 
 	private static String name;
