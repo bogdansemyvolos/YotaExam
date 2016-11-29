@@ -9,17 +9,13 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
-import com.opera.core.systems.OperaDriver;
-
 public class WebDriverFactory {
 
 	/* Browsers constants */
 	public static final String CHROME = "chrome";
 	public static final String FIREFOX = "firefox";
-	public static final String OPERA = "opera";
 	public static final String INTERNET_EXPLORER = "ie";
     public static final String SAFARI = "safari";
-	public static final String IPHONE = "iphone";
         
         private WebDriverFactory(){}
 
@@ -45,16 +41,10 @@ public class WebDriverFactory {
             isSupportedPlatform(browser);
 			webDriver = new InternetExplorerDriver();
 
-		} else if (OPERA.equals(browser)) {
-			webDriver = new OperaDriver();
-
-        } else if (SAFARI.equals(browser)) {
+		} else if (SAFARI.equals(browser)) {
             isSupportedPlatform(browser);
             webDriver = new SafariDriver();
 
-    } else if (IPHONE.equals(browser)) {
-      webDriver = new RemoteWebDriver(DesiredCapabilities.iphone());
-      
     } else  {
       webDriver = new RemoteWebDriver(DesiredCapabilities.android());
 
