@@ -221,4 +221,13 @@ public class PaymentPage extends BasePage {
     public void assertDoPurchaseButtonIsDisable() {
         jassert.assertTrue("Кнопка \"Подключить\" активна", "Кнопка \"Подключить\" неактивна", doPurchase.isDisabled(), true);
     }
+
+    /*
+     * Присваивает полю значение с помощью JS
+     * @param value устанавливаемое значение
+     */
+    public void setBalance(int value){
+        balance.setInnerHtml(Integer.toString(value));
+    }
+
 }

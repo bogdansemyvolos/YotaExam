@@ -24,7 +24,7 @@ public class Button extends BaseElement {
     /**
      * Проверка на то, что кнопка активна
      *
-     * @return
+     * @return true если кнопка активна
      */
     public boolean isEnabled() {
         String elementClass = element.getAttribute("class");
@@ -32,9 +32,9 @@ public class Button extends BaseElement {
     }
 
     /**
-     * Проверка на то, что кнопка не активна
+     * Проверка на то, что кнопка неактивна
      *
-     * @return
+     * @return true если кнопка неактивна
      */
     public boolean isDisabled() {
         String elementClass = element.getAttribute("class");

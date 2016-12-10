@@ -87,7 +87,7 @@ public abstract class BaseElement extends BaseEntity {
      * Возвращает текст внутри элемента
      * @return текст внутри элемента
      */
-    public final String getText() {
+    public String getText() {
         waitForIsElementPresent();
         return element.getText();
     }
@@ -141,11 +141,22 @@ public abstract class BaseElement extends BaseEntity {
     /**
      * Кликает по элементу с помощью Javascript
      */
-    public final void jsClickAndWait() {
+    public void jsClickAndWait() {
         waitForIsElementPresent();
         info("Клик c помощью JS");
         ((JavascriptExecutor) browser.getDriver()).executeScript("arguments[0].click();", element);
         browser.waitForPageToLoad();
         browser.waitForAjaxRequests();
+    }
+
+    /** Присваивает тегу некоторое значение(innerHTML) с помощью JS
+     * @param value значение
+     */
+    public void setInnerHtml(String value){
+        waitForIsElementPresent();
+        element.click();
+        info("Ввод значения '" + value  + "'");
+        ((JavascriptExecutor) browser.getDriver()).executeScript("arguments[0].innerHTML=\"\";", element);
+        ((JavascriptExecutor) browser.getDriver()).executeScript("arguments[0].innerHTML=\"" + value + "\";", element);
     }
 }
