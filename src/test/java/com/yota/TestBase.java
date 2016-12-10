@@ -20,6 +20,7 @@ public class TestBase extends BaseEntity {
     private static final String SCREENSHOT_FOLDER = "target/screenshots/";
     private static final String SCREENSHOT_FORMAT = ".png";
 
+    protected static int screenNumber = 1;
     protected WebDriver webDriver;
     protected String websiteUrl;
     protected Browser browser;
@@ -60,8 +61,11 @@ public class TestBase extends BaseEntity {
                 if (returned != null) {
                     File f = ((TakesScreenshot) returned).getScreenshotAs(OutputType.FILE);
                     try {
+                        if (new File(SCREENSHOT_FOLDER + result.getName() + screenNumber + SCREENSHOT_FORMAT).exists()) {
+                            screenNumber++;
+                        }
                         FileUtils.copyFile(f,
-                                new File(SCREENSHOT_FOLDER + result.getName() + SCREENSHOT_FORMAT));
+                                new File(SCREENSHOT_FOLDER + result.getName() + screenNumber + SCREENSHOT_FORMAT));
                     } catch (IOException e) {
                         e.printStackTrace();
                     }

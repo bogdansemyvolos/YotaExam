@@ -23,6 +23,8 @@ public class PaymentPageTest extends TestBase {
 				{"abcd", "0"},
 				{"-250", "0"},
 				{"!@#$%^&*", "0"},
+				{" ", "0"},
+				{"1 000 000", "0"},
 		};
 	}
 
@@ -120,6 +122,7 @@ public class PaymentPageTest extends TestBase {
 		paymentPage.doReset();
 		paymentPage.switchTariff(speed);
 		paymentPage.setBalance(paymentPage.getTariff(speed).getCost());
+		paymentPage.assertDoPurchaseButtonIsDisable();
 		info("-----==== Тест завершен успешно ====-----");
 	}
 }
